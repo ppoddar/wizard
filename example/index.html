@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wizard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <script type="module">
+        import Wizard      from '../src/wizard.js'
+        import WizardPage1 from './page1.js'
+        import WizardPage2 from './page2.js'
+        
+        var wizard = new Wizard()
+        wizard.add(new WizardPage1({'title':'Page 1 of 3'}))
+        wizard.add(new WizardPage2({'title':'Page 2 of 3'}))
+        wizard.add(new WizardPage1({'title':'Page 3 of 3'}))
+        wizard.open(function() {
+            alert('finish')
+        })
+    </script>
+</body>
+
+</html>
